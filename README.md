@@ -1,0 +1,2 @@
+# ApplicationTemplate
+AppsMadeEasy Project
