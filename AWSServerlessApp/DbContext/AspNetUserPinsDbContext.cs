@@ -26,9 +26,9 @@ namespace AWSServerlessApp.DbContext
         public AspNetUserPinModel isValidatePin(string Pin)
         {
             _logger.LogInformation((int)LoggingEvents.VALIDATE_ITEM, "Validating PIN");
-            string ConnectionPath = _iconfiguration.GetSection("ConnectionStrings").GetSection("DbConnection").Value;
+            string ConnectionPath1 = _iconfiguration.GetSection("ConnectionStrings").GetSection("DbConnection").Value;
             //  string ConnectionPath = "Server=identitycoreawsdb.cl28zty7wqij.us-east-1.rds.amazonaws.com;Database=NetCoreIdentitySample;Uid=masterUsername;Pwd=masterPassword";
-            SqlConnection conn = new SqlConnection(ConnectionPath);
+            SqlConnection conn = new SqlConnection(ConnectionPath1);
             conn.Open();
 
             AspNetUserPinModel pinmodel = new AspNetUserPinModel();
