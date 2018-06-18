@@ -1,0 +1,1 @@
+2018-06-12T12:55:44.6417856+05:30  [INF] User profile is available. Using '"C:\Users\lokaadmin\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)

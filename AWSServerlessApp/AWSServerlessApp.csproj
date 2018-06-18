@@ -1,0 +1,298 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputType>exe</OutputType>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp1.0</TargetFramework>
+    <OutputTypeEx>exe</OutputTypeEx>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>bin\Debug\netcoreapp1.0\AWSServerlessApp.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Migrations\**" />
+    <EmbeddedResource Remove="Migrations\**" />
+    <None Remove="Migrations\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Controllers\ValuesController.cs" />
+    <Compile Remove="CustomModels\NetCoreIdentitySampleContext1.cs" />
+    <Compile Remove="CustomModels\Notifications.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="appsettings.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="bin\Debug\netcoreapp1.0\appsettings.json" />
+    <Content Include="bin\Debug\netcoreapp1.0\AWSServerlessApp.deps.json" />
+    <Content Include="bin\Debug\netcoreapp1.0\AWSServerlessApp.runtimeconfig.dev.json" />
+    <Content Include="bin\Debug\netcoreapp1.0\AWSServerlessApp.runtimeconfig.json" />
+    <Content Include="bin\Debug\netcoreapp1.0\AWSServerlessApp.xml" />
+    <Content Include="bin\Release\netcoreapp1.0\appsettings.json" />
+    <Content Include="bin\Release\netcoreapp1.0\AWSServerlessApp.deps.json" />
+    <Content Include="bin\Release\netcoreapp1.0\publish\appsettings.json" />
+    <Content Include="bin\Release\netcoreapp1.0\publish\AWSServerlessApp.deps.json" />
+  </ItemGroup>  
+  
+  <ItemGroup>
+
+    <PackageReference Include="Amazon.Lambda.AspNetCoreServer" Version="0.10.1-preview1" />
+
+    <PackageReference Include="JWT" Version="3.1.1" />
+
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.Facebook" Version="1.1.2" />
+
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.Google" Version="1.1.2" />
+
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="1.1.2" />
+
+    <PackageReference Include="Microsoft.AspNetCore.Diagnostics" Version="1.1.0" />
+
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="1.1.2" />
+
+    <PackageReference Include="Microsoft.AspNetCore.Routing" Version="1.0.4" />
+
+    <PackageReference Include="Microsoft.AspNetCore.Server.IISIntegration" Version="1.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Server.Kestrel" Version="1.0.1" />
+
+    <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="1.0.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="1.1.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="1.1.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="1.1.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="1.1.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer.Design" Version="1.1.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="1.1.2" />
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="1.1.2" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.EnvironmentVariables" Version="1.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.FileExtensions" Version="1.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="1.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="1.1.1" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="1.1.2" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="1.1.2" />
+    <PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="1.0.0" />
+
+
+    <PackageReference Include="AWSSDK.S3" Version="3.3.5.13" />
+    <PackageReference Include="AWSSDK.Extensions.NETCore.Setup" Version="3.3.0.3" />
+
+    <PackageReference Include="Amazon.Lambda.Core" Version="1.0.0" />
+    <PackageReference Include="Amazon.Lambda.Serialization.Json" Version="1.1.0" />
+    <PackageReference Include="Amazon.Lambda.Logging.AspNetCore" Version="1.1.0" />
+    <PackageReference Include="Moq" Version="4.8.2" />
+    <PackageReference Include="NETStandard.Library" Version="1.6.0" />
+    <PackageReference Include="Sendgrid" Version="9.3.0" />
+    <PackageReference Include="Serilog.Extensions.Logging.File" Version="1.1.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="1.1.0" />
+    <PackageReference Include="System.Data.Common" Version="4.3.0" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.1.0" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="5.2.0-preview2-41113220915" />
+    <PackageReference Include="xunit" Version="2.3.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <DotNetCliToolReference Include="Amazon.Lambda.Tools" Version="2.1.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="bin\Debug\netcoreapp1.0\AWSServerlessApp.dll" />
+    <None Include="bin\Debug\netcoreapp1.0\AWSServerlessApp.pdb" />
+    <None Include="bin\Release\netcoreapp1.0\AWSServerlessApp.dll" />
+    <None Include="bin\Release\netcoreapp1.0\AWSServerlessApp.pdb" />
+    <None Include="bin\Release\netcoreapp1.0\AWSServerlessApp.zip" />
+    <None Include="bin\Release\netcoreapp1.0\publish\Amazon.Lambda.APIGatewayEvents.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\Amazon.Lambda.AspNetCoreServer.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\Amazon.Lambda.Core.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\Amazon.Lambda.Logging.AspNetCore.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\Amazon.Lambda.Serialization.Json.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\AWSSDK.Core.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\AWSSDK.Extensions.NETCore.Setup.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\AWSSDK.S3.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\AWSServerlessApp.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\AWSServerlessApp.pdb" />
+    <None Include="bin\Release\netcoreapp1.0\publish\Microsoft.AspNetCore.Antiforgery.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\Microsoft.AspNetCore.Authentication.Cookies.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\Microsoft.AspNetCore.Authentication.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\Microsoft.AspNetCore.Authorization.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\Microsoft.AspNetCore.Cors.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\Microsoft.AspNetCore.Cryptography.Internal.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\Microsoft.AspNetCore.DataProtection.Abstractions.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\Microsoft.AspNetCore.DataProtection.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\Microsoft.AspNetCore.Diagnostics.Abstractions.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\Microsoft.AspNetCore.Hosting.Abstractions.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\Microsoft.AspNetCore.Hosting.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\Microsoft.AspNetCore.Hosting.Server.Abstractions.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\Microsoft.AspNetCore.Html.Abstractions.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\Microsoft.AspNetCore.Http.Abstractions.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\Microsoft.AspNetCore.Http.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\Microsoft.AspNetCore.Http.Extensions.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\Microsoft.AspNetCore.Http.Features.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\Microsoft.AspNetCore.HttpOverrides.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\Microsoft.AspNetCore.Identity.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\Microsoft.AspNetCore.JsonPatch.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\Microsoft.AspNetCore.Localization.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\Microsoft.AspNetCore.Mvc.Abstractions.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\Microsoft.AspNetCore.Mvc.ApiExplorer.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\Microsoft.AspNetCore.Mvc.Core.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\Microsoft.AspNetCore.Mvc.Cors.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\Microsoft.AspNetCore.Mvc.DataAnnotations.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\Microsoft.AspNetCore.Mvc.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\Microsoft.AspNetCore.Mvc.Formatters.Json.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\Microsoft.AspNetCore.Mvc.Localization.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\Microsoft.AspNetCore.Mvc.Razor.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\Microsoft.AspNetCore.Mvc.Razor.Host.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\Microsoft.AspNetCore.Mvc.TagHelpers.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\Microsoft.AspNetCore.Mvc.ViewFeatures.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\Microsoft.AspNetCore.Razor.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\Microsoft.AspNetCore.Razor.Runtime.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\Microsoft.AspNetCore.Routing.Abstractions.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\Microsoft.AspNetCore.Routing.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\Microsoft.AspNetCore.Server.IISIntegration.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\Microsoft.AspNetCore.Server.Kestrel.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\Microsoft.AspNetCore.WebUtilities.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\Microsoft.CSharp.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\Microsoft.DotNet.InternalAbstractions.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\Microsoft.EntityFrameworkCore.Design.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\Microsoft.EntityFrameworkCore.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\Microsoft.EntityFrameworkCore.Relational.Design.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\Microsoft.EntityFrameworkCore.Relational.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\Microsoft.EntityFrameworkCore.SqlServer.Design.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\Microsoft.EntityFrameworkCore.SqlServer.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\Microsoft.Extensions.Caching.Abstractions.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\Microsoft.Extensions.Caching.Memory.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\Microsoft.Extensions.Configuration.Abstractions.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\Microsoft.Extensions.Configuration.Binder.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\Microsoft.Extensions.Configuration.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\Microsoft.Extensions.Configuration.EnvironmentVariables.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\Microsoft.Extensions.Configuration.FileExtensions.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\Microsoft.Extensions.Configuration.Json.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\Microsoft.Extensions.DependencyInjection.Abstractions.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\Microsoft.Extensions.DependencyInjection.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\Microsoft.Extensions.DependencyModel.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\Microsoft.Extensions.FileProviders.Abstractions.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\Microsoft.Extensions.FileProviders.Composite.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\Microsoft.Extensions.FileProviders.Physical.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\Microsoft.Extensions.FileSystemGlobbing.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\Microsoft.Extensions.Globalization.CultureInfoCache.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\Microsoft.Extensions.Localization.Abstractions.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\Microsoft.Extensions.Localization.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\Microsoft.Extensions.Logging.Abstractions.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\Microsoft.Extensions.Logging.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\Microsoft.Extensions.ObjectPool.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\Microsoft.Extensions.Options.ConfigurationExtensions.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\Microsoft.Extensions.Options.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\Microsoft.Extensions.PlatformAbstractions.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\Microsoft.Extensions.Primitives.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\Microsoft.Extensions.WebEncoders.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\Microsoft.Net.Http.Headers.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\Microsoft.Win32.Registry.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\Newtonsoft.Json.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\Remotion.Linq.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\runtimes\debian.8-x64\native\System.Security.Cryptography.Native.OpenSsl.so" />
+    <None Include="bin\Release\netcoreapp1.0\publish\runtimes\fedora.23-x64\native\System.Security.Cryptography.Native.OpenSsl.so" />
+    <None Include="bin\Release\netcoreapp1.0\publish\runtimes\fedora.24-x64\native\System.Security.Cryptography.Native.OpenSsl.so" />
+    <None Include="bin\Release\netcoreapp1.0\publish\runtimes\opensuse.13.2-x64\native\System.Security.Cryptography.Native.OpenSsl.so" />
+    <None Include="bin\Release\netcoreapp1.0\publish\runtimes\opensuse.42.1-x64\native\System.Security.Cryptography.Native.OpenSsl.so" />
+    <None Include="bin\Release\netcoreapp1.0\publish\runtimes\osx.10.10-x64\native\System.Security.Cryptography.Native.Apple.dylib" />
+    <None Include="bin\Release\netcoreapp1.0\publish\runtimes\osx.10.10-x64\native\System.Security.Cryptography.Native.OpenSsl.dylib" />
+    <None Include="bin\Release\netcoreapp1.0\publish\runtimes\osx\lib\netstandard1.6\System.Security.Cryptography.Algorithms.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\runtimes\rhel.7-x64\native\System.Security.Cryptography.Native.OpenSsl.so" />
+    <None Include="bin\Release\netcoreapp1.0\publish\runtimes\ubuntu.14.04-x64\native\System.Security.Cryptography.Native.OpenSsl.so" />
+    <None Include="bin\Release\netcoreapp1.0\publish\runtimes\ubuntu.16.04-x64\native\System.Security.Cryptography.Native.OpenSsl.so" />
+    <None Include="bin\Release\netcoreapp1.0\publish\runtimes\ubuntu.16.10-x64\native\System.Security.Cryptography.Native.OpenSsl.so" />
+    <None Include="bin\Release\netcoreapp1.0\publish\runtimes\unix\lib\netstandard1.1\System.Runtime.InteropServices.RuntimeInformation.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\runtimes\unix\lib\netstandard1.3\Microsoft.Win32.Registry.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\runtimes\unix\lib\netstandard1.3\System.Data.SqlClient.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\runtimes\unix\lib\netstandard1.3\System.Globalization.Extensions.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\runtimes\unix\lib\netstandard1.3\System.IO.Pipes.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\runtimes\unix\lib\netstandard1.3\System.Net.NameResolution.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\runtimes\unix\lib\netstandard1.3\System.Security.Cryptography.Csp.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\runtimes\unix\lib\netstandard1.3\System.Security.Cryptography.Encoding.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\runtimes\unix\lib\netstandard1.3\System.Security.Principal.Windows.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\runtimes\unix\lib\netstandard1.3\System.Text.Encoding.CodePages.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\runtimes\unix\lib\netstandard1.3\System.Threading.Overlapped.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\runtimes\unix\lib\netstandard1.6\System.Net.Security.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\runtimes\unix\lib\netstandard1.6\System.Security.Cryptography.Algorithms.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\runtimes\unix\lib\netstandard1.6\System.Security.Cryptography.Cng.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\runtimes\unix\lib\netstandard1.6\System.Security.Cryptography.OpenSsl.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\runtimes\unix\lib\netstandard1.6\System.Security.Cryptography.X509Certificates.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\runtimes\win7-x64\native\sni.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\runtimes\win7-x86\native\sni.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\runtimes\win\lib\netstandard1.1\System.Runtime.InteropServices.RuntimeInformation.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\runtimes\win\lib\netstandard1.3\Microsoft.Win32.Registry.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\runtimes\win\lib\netstandard1.3\System.Data.SqlClient.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\runtimes\win\lib\netstandard1.3\System.Globalization.Extensions.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\runtimes\win\lib\netstandard1.3\System.IO.Pipes.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\runtimes\win\lib\netstandard1.3\System.Net.NameResolution.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\runtimes\win\lib\netstandard1.3\System.Net.Security.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\runtimes\win\lib\netstandard1.3\System.Security.Cryptography.Csp.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\runtimes\win\lib\netstandard1.3\System.Security.Cryptography.Encoding.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\runtimes\win\lib\netstandard1.3\System.Security.Principal.Windows.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\runtimes\win\lib\netstandard1.3\System.Text.Encoding.CodePages.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\runtimes\win\lib\netstandard1.3\System.Threading.Overlapped.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\runtimes\win\lib\netstandard1.6\System.Security.Cryptography.Algorithms.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\runtimes\win\lib\netstandard1.6\System.Security.Cryptography.Cng.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\runtimes\win\lib\netstandard1.6\System.Security.Cryptography.X509Certificates.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\System.Buffers.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\System.Collections.Concurrent.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\System.Collections.Immutable.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\System.Collections.NonGeneric.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\System.Collections.Specialized.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\System.ComponentModel.Annotations.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\System.ComponentModel.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\System.ComponentModel.Primitives.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\System.ComponentModel.TypeConverter.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\System.Data.Common.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\System.Data.SqlClient.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\System.Diagnostics.Contracts.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\System.Diagnostics.DiagnosticSource.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\System.Dynamic.Runtime.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\System.Globalization.Extensions.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\System.Interactive.Async.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\System.IO.FileSystem.Primitives.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\System.IO.Pipes.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\System.Linq.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\System.Linq.Expressions.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\System.Linq.Queryable.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\System.Net.NameResolution.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\System.Net.Security.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\System.Net.WebSockets.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\System.ObjectModel.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\System.Reflection.Emit.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\System.Reflection.Emit.ILGeneration.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\System.Reflection.Emit.Lightweight.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\System.Reflection.TypeExtensions.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\System.Runtime.CompilerServices.Unsafe.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\System.Runtime.InteropServices.RuntimeInformation.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\System.Runtime.Numerics.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\System.Runtime.Serialization.Primitives.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\System.Security.Claims.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\System.Security.Cryptography.Algorithms.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\System.Security.Cryptography.Cng.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\System.Security.Cryptography.Csp.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\System.Security.Cryptography.Encoding.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\System.Security.Cryptography.Native.OpenSsl.so" />
+    <None Include="bin\Release\netcoreapp1.0\publish\System.Security.Cryptography.OpenSsl.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\System.Security.Cryptography.Primitives.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\System.Security.Cryptography.X509Certificates.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\System.Security.Principal.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\System.Security.Principal.Windows.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\System.Text.Encoding.CodePages.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\System.Text.Encodings.Web.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\System.Text.RegularExpressions.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\System.Threading.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\System.Threading.Overlapped.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\System.Threading.Tasks.Extensions.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\System.Threading.Thread.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\System.Threading.ThreadPool.dll" />
+    <None Include="bin\Release\netcoreapp1.0\publish\System.Xml.ReaderWriter.dll" />
+  </ItemGroup>
+
+</Project>
